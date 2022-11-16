@@ -29,14 +29,9 @@ mkdir -p %{buildroot}%{_datadir}
 cp -a texmf-dist %{buildroot}%{_datadir}
 
 %files
-%{_texmfdistdir}/texmf-dist/scripts/ctanbib
-%doc %{_texmfdistdir}/texmf-dist/doc/support/ctanbib
-%{_texmfdistdir}/texmf-dist
-%{_texmfdistdir}/texmf-dist/doc
-%doc %{_texmfdistdir}/texmf-dist/doc/man
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1/ctanbib.man1.pdf
-%doc %{_texmfdistdir}/texmf-dist/doc/man/man1/ctanbib.1
+%{_texmfdistdir}/scripts/ctanbib
+%doc %{_texmfdistdir}/doc/support/ctanbib
+%doc %{_texmfdistdir}/doc/man/man1/*
 
 %post -p %{_sbindir}/texlive.post
 
