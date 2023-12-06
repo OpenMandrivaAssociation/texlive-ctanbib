@@ -1,6 +1,6 @@
 Name:		texlive-ctanbib
-Version:	59782
-Release:	2
+Version:	68650
+Release:	1
 Summary:	Export CTAN entries to bib format
 Group:		Publishing
 URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ctanbib
