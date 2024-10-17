@@ -3,7 +3,7 @@ Version:	68650
 Release:	1
 Summary:	Export CTAN entries to bib format
 Group:		Publishing
-URL:		http://www.ctan.org/tex-archive/macros/latex/contrib/ctanbib
+URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ctanbib
 License:	lppl1.3
 Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctanbib.r%{version}.tar.xz
 Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctanbib.doc.r%{version}.tar.xz
