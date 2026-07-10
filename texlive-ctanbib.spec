@@ -1,39 +1,25 @@
-Name:		texlive-ctanbib
-Version:	68650
-Release:	1
+%global tl_name ctanbib
+%global tl_revision 79157
+
+Name:		texlive-%{tl_name}
+Epoch:		1
+Version:	0.2e
+Release:	%{tl_revision}.1
 Summary:	Export CTAN entries to bib format
 Group:		Publishing
-URL:		https://www.ctan.org/tex-archive/macros/latex/contrib/ctanbib
+URL:		https://www.ctan.org/tex-archive/support/ctanbib
 License:	lppl1.3
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctanbib.r%{version}.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/ctanbib.doc.r%{version}.tar.xz
+Source0:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ctanbib.r%{tl_revision}.tar.xz
+Source1:	https://mirrors.ctan.org/systems/texlive/tlnet/archive/ctanbib.doc.r%{tl_revision}.tar.xz
 BuildArch:	noarch
+BuildSystem:	texlive
 BuildRequires:	texlive-tlpkg
-Requires(pre):	texlive-tlpkg
-Requires(post):	texlive-kpathsea
+%texlive_base_requires
+Requires:	texlive(ctanbib.bin)
+Provides:	texlive(%{tl_name}) = %{tl_revision}
 
 %description
-This package provides a Lua script which can be used for
-retrieving bibliographic information in BibLaTeX format for
-packages hosted on CTAN. The ctanbib script depends only on
-LuaXML.
+This package provides a Lua script which can be used for retrieving
+bibliographic information in BibLaTeX format for packages hosted on
+CTAN. The ctanbib script depends only on LuaXML.
 
-%prep
-%autosetup -p1 -c -a1
-
-%build
-
-%install
-rm -rf tlpkg
-mkdir -p %{buildroot}%{_datadir}
-cp -a texmf-dist %{buildroot}%{_datadir}
-
-%files
-%{_texmfdistdir}/scripts/ctanbib
-%doc %{_texmfdistdir}/doc/support/ctanbib
-%doc %{_texmfdistdir}/doc/man/man1/*
-
-%post -p %{_sbindir}/texlive.post
-
-%postun
-[ "$1" -eq 0 ] && %{_sbindir}/texlive.post
