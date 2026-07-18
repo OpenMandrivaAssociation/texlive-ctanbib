@@ -1,5 +1,6 @@
 %global tl_name ctanbib
 %global tl_revision 79157
+%global tl_bin_links ctanbib:%{_texmfdistdir}/scripts/ctanbib/ctanbib
 
 Name:		texlive-%{tl_name}
 Epoch:		1
@@ -15,6 +16,8 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(ctanbib.bin)
 Provides:	texlive(%{tl_name}) = %{tl_revision}
+Provides:	texlive(%{tl_name}.bin) = %{tl_revision}
+Provides:	texlive-%{tl_name}.bin = %{EVRD}
 
 %description
 This package provides a Lua script which can be used for retrieving
